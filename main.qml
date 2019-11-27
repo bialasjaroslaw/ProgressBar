@@ -60,8 +60,8 @@ ApplicationWindow {
 
                         // These are hard-coded values to confirm it is working
                         from: 0
-                        to: 100
-                        value: 5
+                        to: 40
+                        value: progressDialog.progress
                         onValueChanged: {
                             console.log("Progressbar value changed: ", progressbar_id.value)
                         }
@@ -73,12 +73,6 @@ ApplicationWindow {
                             onClicked: progressbar_id.value += 5;
                         }
                     }
-                    Connections {
-                        target: progressDialog
-                        onProgressChanged: function(){
-                            progressbar_id.value = progress;}
-                    }
-                    // This is working if clicking on the progressbar
                 }
             }
     }

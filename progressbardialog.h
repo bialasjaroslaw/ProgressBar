@@ -18,12 +18,15 @@ public:
 public Q_SLOTS:
     void startComputation();
     void cancelComputation();
+private Q_SLOTS:
+    void updateProgress(int value);
 signals:
     void progressChanged();
     void runningChanged();
 private:
     bool m_running = false;
-    int m_progressValue;
+    int m_progressValue = 0;
+    QVector<int> vector;
     QObject m_Model;
     QFutureWatcher<void> m_futureWatcher;
 };
